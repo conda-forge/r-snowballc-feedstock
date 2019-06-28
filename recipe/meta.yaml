@@ -1,4 +1,4 @@
-{% set version = '0.5.1' %}
+{% set version = '0.6.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -7,24 +7,22 @@ package:
   version: {{ version|replace("-", "_") }}
 
 source:
-  fn: SnowballC_{{ version }}.tar.gz
   url:
     - {{ cran_mirror }}/src/contrib/SnowballC_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SnowballC/SnowballC_{{ version }}.tar.gz
-  sha256: 44170624fd906ecc67959fed5dbf80068b59b1b2a6fbab65da5054e3e1186f4d
+  sha256: 61617d344444235940f5b9ac1cd6b86938e74a8c76791235724b16b755c3f72c
 
 build:
   merge_build_host: True  # [win]
-  number: 1001
-  skip: true  # [win32]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -55,8 +53,22 @@ about:
 extra:
   recipe-maintainers:
     - croth1
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
+    - conda-forge/r
+
+# Package: SnowballC
+# Type: Package
+# Version: 0.6.0
+# Date: 2019-01-07
+# Title: Snowball Stemmers Based on the C 'libstemmer' UTF-8 Library
+# Authors@R: person("Milan", "Bouchet-Valat", email="nalimilan@club.fr", role=c("aut", "cre"))
+# Description: An R interface to the C 'libstemmer' library that implements Porter's word stemming algorithm for collapsing words to a common root to aid comparison of vocabulary. Currently supported languages are Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian, Spanish, Swedish and Turkish.
+# License: BSD_3_clause + file LICENSE
+# Copyright: Dr Martin Porter (2001) and Richard Boulton (2004, 2005) for the 'libstemmer' C library, and Milan Bouchet-Valat (2013) for the R package contents.
+# URL: https://r-forge.r-project.org/projects/r-temis/
+# BugReports: https://r-forge.r-project.org/tracker/?group_id=1437
+# NeedsCompilation: yes
+# Packaged: 2019-01-08 13:36:02 UTC; milan
+# Author: Milan Bouchet-Valat [aut, cre]
+# Maintainer: Milan Bouchet-Valat <nalimilan@club.fr>
+# Repository: CRAN
+# Date/Publication: 2019-01-15 16:10:03 UTC
