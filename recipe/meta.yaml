@@ -1,4 +1,4 @@
-{% set version = '0.6.0' %}
+{% set version = "0.7.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/SnowballC_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/SnowballC/SnowballC_{{ version }}.tar.gz
-  sha256: 61617d344444235940f5b9ac1cd6b86938e74a8c76791235724b16b755c3f72c
+  sha256: b10fee9d322f567a22c580b49b5d4ba1c86eae40a71794ca92552c726b3895f3
 
 build:
-  merge_build_host: True  # [win]
-  number: 1
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -42,11 +42,9 @@ test:
 about:
   home: https://r-forge.r-project.org/projects/r-temis/
   license: BSD_2_clause
-  summary: An R interface to the C libstemmer library that implements Porter's word stemming
-    algorithm for collapsing words to a common root to aid comparison of vocabulary.
-    Currently supported languages are Danish, Dutch, English, Finnish, French, German,
-    Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian, Spanish, Swedish and
-    Turkish.
+  summary: An R interface to the C libstemmer library that implements Porter's word stemming algorithm for collapsing words to a common root to aid comparison of
+    vocabulary. Currently supported languages are Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian, Spanish,
+    Swedish and Turkish.
   license_family: BSD
   license_file: LICENSE
 
