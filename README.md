@@ -3,9 +3,22 @@ About r-snowballc-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-snowballc-feedstock/blob/main/LICENSE.txt)
 
+
+About r-snowballc
+-----------------
+
 Home: https://r-forge.r-project.org/projects/r-temis/
 
-Package license: BSD_2_clause
+Package license: BSD-3-Clause
+
+Summary: An R interface to the C libstemmer library that implements Porter's word stemming algorithm for collapsing words to a common root to aid comparison of vocabulary. Currently supported languages are Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian, Spanish, Swedish and Turkish.
+
+About r-snowballc
+-----------------
+
+Home: https://r-forge.r-project.org/projects/r-temis/
+
+Package license: BSD-3-Clause
 
 Summary: An R interface to the C libstemmer library that implements Porter's word stemming algorithm for collapsing words to a common root to aid comparison of vocabulary. Currently supported languages are Danish, Dutch, English, Finnish, French, German, Hungarian, Italian, Norwegian, Portuguese, Romanian, Russian, Spanish, Swedish and Turkish.
 
